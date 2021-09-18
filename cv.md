@@ -12,7 +12,7 @@
 
 [**Github**](https://github.com/delilah07)
 
-[**Linkedin**](https://github.com/delilah07)
+[**Linkedin**](https://www.linkedin.com/in/iryna-abrosimova-5933b4190/)
 
 [**CodePen**](https://codepen.io/iryna-abrosimova)
 
@@ -21,8 +21,7 @@
 I'm calm, friendly, not conflict person and like to be part of the group.\
 I like to see the results of my work in different aspects of my life (hobby, home, work).\
 I'm self-organized person, I enjoy learning something new whenever I have time.\
-For two years I've freelanced at the [**Geniustudio digital agency**](https://geniustudio.net/).\
-I was HTML and CSS Developer and now I'm Junior Front-End Developer
+For two years I've freelanced at the [**Geniustudio digital agency**](https://geniustudio.net/) as the HTML and CSS Developer and now I'm the Junior Front-End Developer
 
 ## My skills
 
@@ -118,4 +117,4 @@ I lived in the USA (California) for half a year in the 2014, where I got a lot p
 
 Now I've lived in Poland for 5 years
 
-### Russion and Ukrainian - Native
+### Russian and Ukrainian - Native
