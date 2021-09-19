@@ -10,18 +10,72 @@
   </head>
   <body>
     <div class="container">
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="list-nav__item">
+            <a class="scroll-to" href="#skills">Skills</a>
+          </li>
+          <li class="list-nav__item">
+            <a class="scroll-to" href="#experience">Experience</a>
+          </li>
+          <li class="list-nav__item">
+            <a class="scroll-to" href="#education">Education</a>
+          </li>
+          <li class="list-nav__item">
+            <a class="scroll-to" href="#code">Code</a>
+          </li>
+          <li class="list-nav__item">
+            <a class="scroll-to" href="#language">Language</a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="nav nav-mob">
+        <ul class="nav__list nav__list-mob">
+          <li class="list-nav__item">
+            <a class="scroll-to" href="#contacts">Contacts</a>
+          </li>
+          <li class="list-nav__item">
+            <a class="scroll-to" href="#about">About</a>
+          </li>
+          <li class="list-nav__item">
+            <a class="scroll-to" href="#skills">Skills</a>
+          </li>
+          <li class="list-nav__item">
+            <a class="scroll-to" href="#experience">Experience</a>
+          </li>
+          <li class="list-nav__item">
+            <a class="scroll-to" href="#education">Education</a>
+          </li>
+          <li class="list-nav__item">
+            <a class="scroll-to" href="#code">Code</a>
+          </li>
+          <li class="list-nav__item">
+            <a class="scroll-to" href="#language">Language</a>
+          </li>
+        </ul>
+        <a
+          href="javascript:void(0);"
+          class="nav__burger"
+          onclick="myFunction()"
+        >
+          <span></span><span></span><span></span>
+        </a>
+      </nav>
       <div class="page__wrapper">
         <aside class="aside">
           <header class="header">
             <div class="header__img">
-              <img src="img/47872020.jpg" alt="my photo" />
+              <figure>
+                <img src="img/47872020.jpg" alt="my photo" />
+                <figcaption>It's me</figcaption>
+              </figure>
             </div>
             <div class="header__title">
               <h1 class="header__name text-animation">Abrosimova Iryna</h1>
               <h2 class="header__position">Junior front-end developer</h2>
             </div>
           </header>
-          <section class="aside__contacts">
+          <section class="aside__contacts" id="contacts">
             <h3>Contacts</h3>
             <div class="contacts-aside">
               <i class="fas fa-map-marker-alt"></i>
@@ -64,11 +118,9 @@
               </a>
             </div>
           </section>
-          <section class="aside__about">
+          <section class="aside__about" id="about">
             <h3>About me</h3>
             <p>
-              I'm calm, friendly, not conflict person and like to be part of the
-              group.<br />
               I like to see the results of my work in different aspects of my
               life (hobby, home, work).<br />
               I'm self-organized person, I enjoy learning something new whenever
@@ -83,7 +135,7 @@
           </section>
         </aside>
         <main class="main">
-          <section class="main__skills">
+          <section class="main__skills" id="skills">
             <h3>My skills</h3>
             <ul>
               <li>HTML 5</li>
@@ -99,7 +151,7 @@
             </ul>
           </section>
 
-          <section class="main__experience">
+          <section class="main__experience" id="experience">
             <h3>My Experience</h3>
             <p>
               For two years I’ve worked with Kharkiv
@@ -124,7 +176,7 @@
               <a href="https://abrosimovairyna.github.io">Portfolio</a>
             </p>
           </section>
-          <section class="main__education">
+          <section class="main__education" id="education">
             <h3>My Education</h3>
             <h4>I finished:</h4>
             <ul>
@@ -153,8 +205,8 @@
               </li>
             </ul>
           </section>
-          <section class="main__code">
-            <h3>My Code Example</h3>
+          <section class="main__code" id="code">
+            <h3>My Code Examples</h3>
             <ul>
               <li>
                 <a href="https://github.com/delilah07/Go-Surf">Go-Surf</a>
@@ -179,18 +231,19 @@
                 >
               </li>
             </ul>
-
-            <pre>
+            <div class="code__wrapper">
+              <pre><code>
 function differenceInAges(ages){ 
   let newArr = ages.sort((a, b)=> a - b); 
   let minAge = newArr[0];
   let maxAge = newArr[newArr.length - 1];
   let difAge = newArr[newArr.length - 1] - newArr[0] ];
   return [minAge, maxAge, difAge]; 
-}; </pre
-            >
+}; 
+</code></pre>
+            </div>
           </section>
-          <section class="main__language">
+          <section class="main__language" id="language">
             <h3>Languages</h3>
             <ul>
               <li><span>English</span> - B2</li>
@@ -208,7 +261,7 @@ function differenceInAges(ages){
             <p>My GitHub</p>
           </a>
         </div>
-        <p>© September 2021</p>
+        <p>© <time datetime="2021-09">September 2021</time></p>
         <div class="footer__rsschool">
           <a href="https://rs.school/js/">
             <img
@@ -226,5 +279,36 @@ function differenceInAges(ages){
       src="https://kit.fontawesome.com/641a1541bd.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const anchors = document.querySelectorAll("a.scroll-to");
+
+      for (let anchor of anchors) {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const blockID = anchor.getAttribute("href");
+
+          document.querySelector(blockID).scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+          if (window.innerWidth <= 768) {
+            myFunction();
+          }
+        });
+      }
+
+      function myFunction() {
+        let list = document.querySelector(".nav__list-mob");
+        let burger = document.querySelector(".nav__burger");
+        if (list.style.display === "flex") {
+          list.style.display = "none";
+          burger.classList.remove("active");
+        } else {
+          list.style.display = "flex";
+          burger.classList.add("active");
+        }
+      }
+    </script>
   </body>
 </html>
